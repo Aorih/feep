@@ -1,0 +1,97 @@
+*,
+*:before,
+*:after{
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+
+body{ 
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 99999;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background: whitesmoke;
+}
+
+.loaderWrapper {
+    width: 100%;  
+    height: 100%;  
+    position: fixed;  
+    top:0px;  
+    left:0px;  
+    z-index: 99998; 
+}
+
+.loaderIcon{
+  width: 89px;
+  height: 89px;
+  background: red;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  animation-duration: 2.5s;
+  animation-name: animSpin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+   
+@keyframes animSpin{
+  50%{
+    transform: rotateZ(180deg) scale(.94);
+  }
+  100%{
+    transform: rotateZ(360deg) scale(1);
+  }
+}
+
+@keyframes onDestroy{
+    0%{
+        size: 100%;
+    }
+
+    20%{
+        size: 110%;
+    }
+
+    100%{
+        size: 0%;
+    }
+}
+
+.loaderIcon,
+.loaderIcon:before,
+.loaderIcon:after{
+  border-radius: 50%;
+}
+
+.loaderIcon:before,
+.loaderIcon:after{
+  content: '';
+  position: absolute;
+  border: 8px solid transparent;
+}
+
+.loaderIcon:before{
+  width: 75%;
+  height: 75%;
+  background: rgba(255,255,255,.13);
+  left: 12.5%;
+  top: 12.5%;
+  border-left: 8px solid rgba(255,255,255,.34);
+  border-bottom: 8px solid rgba(255,255,255,.34);
+}
+
+.loaderIcon:after{
+  width: 40%;
+  height: 40%;
+  left: 30%;
+  top: 30%;
+  border-right: 8px solid rgba(255,255,255,1);
+  border-left: 8px solid rgba(255,255,255,1);
+  border-bottom: 8px solid rgba(255,255,255,1);
+}
