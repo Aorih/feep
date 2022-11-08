@@ -21,7 +21,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  public _isLoading: Boolean = true;
+  public _isLoading: Boolean = false;
 
   fLogin : FormGroup = this.fb.group({
     username: this.fb.control("",[
