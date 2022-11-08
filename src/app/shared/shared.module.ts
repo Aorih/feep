@@ -9,7 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     LoaderMaskComponent
   ],
   imports: [
-    CommonModule, BrowserAnimationsModule
+    CommonModule,
+    // BrowserAnimationsModule
   ],
   exports: [ LoaderMaskComponent ]
 })

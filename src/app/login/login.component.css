@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.logo__img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    font-size: 8rem;
+    font-family: 'Rubik Bubbles', cursive;
+    background-color: rgb(255, 42, 42);
+    width: 30rem;
+    height: 10rem;
+    border-radius: 2rem;
+}

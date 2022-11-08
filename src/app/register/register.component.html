@@ -1,0 +1,35 @@
+<div class="banner">
+    <h2>¿What are you waiting for to join the first</h2>
+    <div class="keyWord">gamified</div>
+    <h2>social netwwork?</h2>
+</div>
+<div class="container-sm">
+    <form (ngSubmit)="register()" [formGroup]="fRegister" class="mt-4 mb-2">
+        <div class="mb-3">
+            <label for="inputName" class="form-label">Name</label>
+            <input type="email" class="form-control" id="inputName" aria-describedby="emailHelp">
+            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+          </div>
+        <div class="mb-3">
+            <label for="inputSurname" class="form-label">Surname</label>
+            <input type="email" class="form-control" id="inputSurname" aria-describedby="emailHelp">
+            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+          </div>
+        <div class="mb-3">
+            <label for="inputEmail" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+          </div>
+        <div class="mb-3">
+          <label for="inputUsername" class="form-label">Username</label>
+          <input type="email" class="form-control" id="inputUsername" aria-describedby="emailHelp">
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+        <div class="mb-3">
+          <label for="inputPassword" class="form-label">Password</label>
+          <input type="password" class="form-control" id="inputPassword">
+        </div>
+        <button type="submit" class="btn btn-primary">Sign up my account!</button>
+    </form>
+</div>
+

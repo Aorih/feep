@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-loader-mask',
@@ -11,9 +11,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
       transition(':enter', [
         style({ opacity: 0 }),
         animate('500ms', style({ opacity: 1 })),
-      ]),
-      transition(':leave', [
-        animate('500ms', style({ opacity: 0 }))
       ])
     ])
   ]
