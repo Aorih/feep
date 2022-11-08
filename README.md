@@ -1,6 +1,7 @@
 # Feep
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
+First gamified social network to promote youtself every month.
+Show everyone what are you working on!
 
 ## Development server
 
