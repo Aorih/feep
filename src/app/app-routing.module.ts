@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: () => import("./register/register.module").then((m)=> m.RegisterModule)
   },
   {
+    path: "feed",
+    loadChildren: () => import("./feed/feed.module").then( (m) => m.FeedModule)
+  },
+  {
     path:"**",
     redirectTo: "login"
   }
