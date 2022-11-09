@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
 
+main{
+    position: fixed;
+    top: 15%;
+    left: 20%;
+    max-width: 60%;
+    animation-name: showsUp;
+    animation-duration: 3.5s;
+    animation-iteration-count: 1;
+}
+
 .logo{
     display: flex;
     justify-content: center;
 }
+
 
 .logo__img{
     display: flex;
@@ -12,36 +23,49 @@
     color: whitesmoke;
     font-size: 8rem;
     font-family: 'Rubik Bubbles', cursive;
-    background-color: rgb(255, 42, 42);
+    animation: gradientColor 2s linear infinite;
+    background-image: linear-gradient(90deg,  rgba(209, 41, 41, 1) 0%, rgba(233, 155, 155, 1) 50%,  rgba(209, 41, 41, 1) 100%);
+    background-size: 1100% 100%;
     width: 30rem;
     height: 10rem;
     border-radius: 2rem;
 }
 
 .box {
-    position: absolute;
     height: 1rem;
+    margin: 0 100%;
     width: 80%;
     background-color: black;
-    top: 80%;
-    left: 10%;
     border-radius: 1rem;
-    animation: fadeOutBox 10s linear infinite;
-    background-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 100%);
-    background-size: 1100% 100%;
+    animation-name: comprime;
+    animation-duration: 4s;
 }
 
-@keyframes fadeOutBox{
-    /* 0%{
-        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
-    }
-    100%{
-        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 100%);
-    } */
-    0%{
-        background-position: 0% 0%;
-    } 
-    100%{
-        background-position: 100% 0%;
-    }
+.hideElements{
+    margin: 0;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    height: 14%;
+    top: 86%;
+    background-color: white;
+}
+
+@keyframes gradientColor{
+    0% { background-position: 0% 0%; } 
+    100%{ background-position: 100% 0%; }
+}
+
+@keyframes showsUp {
+    0%, 50% { top: 100%; }
+    100%{ top: 15% }
+}
+
+@keyframes comprime {
+    0% { margin: 0 100%; }
+    25% { margin: 0 100%; }
+    50% { margin: 0 0% }
+    75% { margin: 0 0% }
+    100% { margin: 0 100%; }
 }
