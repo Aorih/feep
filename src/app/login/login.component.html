@@ -1,29 +1,22 @@
-<div class="contenedor">
-    <div *ngIf="_isLoading" @openClose>
-        <app-loader-mask></app-loader-mask>
+<header class="heading fixed-top">
+    <div class="title">
+        <img src="../../assets/titleLogin.png" alt="sheep">
     </div>
-    
-    <main class="container-sm mt-5" *ngIf="!_isLoading">
-        <div class="logo">
-            <div class="logo__img">
-                <p>Fee<strong>P</strong></p>
-            </div>
+    <form (ngSubmit)="validar()" [formGroup]="fLogin">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
         </div>
-        <form (ngSubmit)="validar()" [formGroup]="fLogin" class="mt-4 mb-2">
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Username</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <button type="submit" class="btn btn-danger">Login</button>
-        </form>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-danger">Login</button>
+        <br>
         <a routerLink="/register" routerLinkActive="router-link-active" >Or create a new account</a>
-    </main>
-    <div class="hideElements" *ngIf="!_isLoading">
-        <div class="box"></div>
-    </div>
+    </form>
+</header>
+<div class="hideElements">
+    <div class="box"></div>
 </div>

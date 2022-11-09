@@ -1,44 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
 
-main{
-    position: fixed;
-    top: 15%;
-    left: 20%;
-    max-width: 60%;
-    animation-name: showsUp;
-    animation-duration: 3.5s;
-    animation-iteration-count: 1;
-}
-
-.logo{
+.heading{
     display: flex;
-    justify-content: center;
-}
-
-
-.logo__img{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    padding: 2rem;
+    box-shadow: 0px 5px 5px 10px rgba(0,0,0,0.7);
     color: whitesmoke;
-    font-size: 8rem;
     font-family: 'Rubik Bubbles', cursive;
-    animation: gradientColor 2s linear infinite;
-    background-image: linear-gradient(90deg,  rgba(209, 41, 41, 1) 0%, rgba(233, 155, 155, 1) 50%,  rgba(209, 41, 41, 1) 100%);
+    animation: gradientColor 3s linear infinite;
+    background-image: linear-gradient(90deg,  #9D1D1D 0%, rgb(214, 82, 82) 50%,  #9D1D1D 100%);
     background-size: 1100% 100%;
-    width: 30rem;
-    height: 10rem;
-    border-radius: 2rem;
+
+    animation: showsUp 5s;
+}
+
+img {
+    max-width: 40rem;
+    max-height: 10rem;
+}
+
+.title{
+    display: flex;
+    flex-basis: 80%;
+    padding-left: 5rem;
+    padding-top: 2rem;
 }
 
 .box {
     height: 1rem;
     margin: 0 100%;
-    width: 80%;
+    width: 100%;
     background-color: black;
-    border-radius: 1rem;
+    border-radius: 0rem;
     animation-name: comprime;
-    animation-duration: 4s;
+    animation-duration: 6s;
 }
 
 .hideElements{
@@ -58,8 +53,9 @@ main{
 }
 
 @keyframes showsUp {
-    0%, 50% { top: 100%; }
-    100%{ top: 15% }
+    0%, 50% { top: 100%; opacity: 0; box-shadow: 0px -10px 9px 0px rgba(0,0,0,0.75);}
+    60% { opacity: 0; }
+    100%{ top: 0%; opacity: 1; box-shadow: 0px 5px 5px 10px rgba(0,0,0,0.7);}
 }
 
 @keyframes comprime {
