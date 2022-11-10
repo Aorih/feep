@@ -1,4 +1,5 @@
-<header class="heading fixed-top">
+<app-loader-mask *ngIf="_isLoading"></app-loader-mask>
+<header class="heading fixed-top" *ngIf="!_isLoading">
     <div class="title">
         <img src="../../assets/titleLogin.png" alt="sheep">
     </div>
@@ -17,6 +18,6 @@
         <a routerLink="/register" routerLinkActive="router-link-active" >Or create a new account</a>
     </form>
 </header>
-<div class="hideElements">
+<div class="hideElements" *ngIf="!_isLoading">
     <div class="box"></div>
 </div>

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, animate, style, transition } from '@angular/animations';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { filter } from 'rxjs';
+import { RouterExtService } from '../services/router-ext.service';
 
 @Component({
   selector: 'app-login',
@@ -22,6 +25,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   public _isLoading: Boolean = true;
+  public firstVisit: Boolean = true;
+  public previousUrl: any;
 
   fLogin : FormGroup = this.fb.group({
     username: this.fb.control("",[
@@ -35,9 +40,18 @@ export class LoginComponent implements OnInit {
     ])
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private routerExtService: RouterExtService) {
+    
+  }
 
   ngOnInit(): void {
+
+    if(this.routerExtService.getPreviousUrl()==="/register"){
+      this._isLoading = false;
+      this.firstVisit = false;
+      
+    }
+
     setTimeout(() => {
       this._isLoading = false;
     }, 5000);
