@@ -20,7 +20,34 @@
             </form>
         </div>
     </header>
-    <div class="background" [ngClass]="firstVisit ? 'fadeInBG': null"></div>
+    <div class="background" [ngClass]="firstVisit ? 'fadeInBG': null">
+        <div class="rForm" *ngIf="!firstVisit">
+            <form>
+              <div class="mb-3">
+                <label for="inputName" class="form-label">Name</label>
+                <input type="email" class="form-control" id="inputName" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="inputSurname" class="form-label">Surname</label>
+                <input type="email" class="form-control" id="inputSurname" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="inputEmail" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="inputUsername" class="form-label">Username</label>
+                <input type="email" class="form-control" id="inputUsername" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="inputPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inputPassword">
+              </div>
+              <button type="submit" class="btn btn-danger">Sign up my account!</button>
+            </form>
+            <a routerLink="/login" routerLinkActive="router-link-active" >Or Log in into an existing account</a>
+          </div>
+    </div>
     <div class="footer fixed-bottom" [ngClass]="firstVisit ? 'showUp': 'gradientColor'">
         <!-- <div class="box" [ngClass]="firstVisit ? 'expandAndComprime':''"></div> -->
     </div>
