@@ -1,23 +1,28 @@
-<app-loader-mask *ngIf="_isLoading"></app-loader-mask>
-<header class="heading fixed-top" *ngIf="!_isLoading">
-    <div class="title">
-        <img src="../../assets/titleLogin.png" alt="sheep">
+<app-loader-mask *ngIf="_isLoading" @openClose></app-loader-mask>
+<div *ngIf="!_isLoading">
+    <header class="heading fixed-top" [ngClass]="firstVisit ? 'showDown': 'toHead'">
+        <div class="heading__content" [ngClass]="firstVisit ? null : 'fadeInHContent'">
+            <div class="title">
+                <img src="../../assets/titleLogin.png" alt="sheep">
+            </div>
+            <form (ngSubmit)="validar()" [formGroup]="fLogin">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Username</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <button type="submit" class="btn btn-danger">Login</button>
+                <br>
+                <a routerLink="/register" routerLinkActive="router-link-active" >Or create a new account</a>
+            </form>
+        </div>
+    </header>
+    <div class="background" [ngClass]="firstVisit ? 'fadeInBG': null"></div>
+    <div class="footer fixed-bottom" [ngClass]="firstVisit ? 'showUp': 'gradientColor'">
+        <!-- <div class="box" [ngClass]="firstVisit ? 'expandAndComprime':''"></div> -->
     </div>
-    <form (ngSubmit)="validar()" [formGroup]="fLogin">
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Username</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <button type="submit" class="btn btn-danger">Login</button>
-        <br>
-        <a routerLink="/register" routerLinkActive="router-link-active" >Or create a new account</a>
-    </form>
-</header>
-<div class="hideElements" *ngIf="!_isLoading">
-    <div class="box"></div>
 </div>
+

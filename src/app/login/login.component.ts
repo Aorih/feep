@@ -49,12 +49,11 @@ export class LoginComponent implements OnInit {
     if(this.routerExtService.getPreviousUrl()==="/register"){
       this._isLoading = false;
       this.firstVisit = false;
-      
     }
 
     setTimeout(() => {
       this._isLoading = false;
-    }, 5000);
+    }, 2000);
   }
 
   validar(){
