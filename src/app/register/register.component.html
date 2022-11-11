@@ -1,35 +1,62 @@
-<div class="banner">
-    <h2>¿What are you waiting for to join the first</h2>
-    <div class="keyWord">gamified</div>
-    <h2>social netwwork?</h2>
-</div>
-<div class="container-sm">
-    <form (ngSubmit)="register()" [formGroup]="fRegister" class="mt-4 mb-2">
+<div class="heading fixed-top">
+  <div class="heading__content">
+    <div class="title">
+        <img src="../../assets/titleLogin.png" alt="sheep">
+    </div>
+    <form>
         <div class="mb-3">
-            <label for="inputName" class="form-label">Name</label>
-            <input type="email" class="form-control" id="inputName" aria-describedby="emailHelp">
-            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-          </div>
-        <div class="mb-3">
-            <label for="inputSurname" class="form-label">Surname</label>
-            <input type="email" class="form-control" id="inputSurname" aria-describedby="emailHelp">
-            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-          </div>
-        <div class="mb-3">
-            <label for="inputEmail" class="form-label">E-mail</label>
-            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
-            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-          </div>
-        <div class="mb-3">
-          <label for="inputUsername" class="form-label">Username</label>
-          <input type="email" class="form-control" id="inputUsername" aria-describedby="emailHelp">
-          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
-          <label for="inputPassword" class="form-label">Password</label>
-          <input type="password" class="form-control" id="inputPassword">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
         </div>
-        <button type="submit" class="btn btn-primary">Sign up my account!</button>
+        <button type="submit" class="btn btn-danger">Login</button>
+        <br>
+        <a routerLink="/register" routerLinkActive="router-link-active" >Or create a new account</a>
     </form>
+  </div>
 </div>
+
+<div class="subtitle">
+  <h2>You are on <br> the right <br> way</h2>
+</div>
+
+<div class="background">
+  <div class="rForm">
+    <form (ngSubmit)="register()" [formGroup]="fRegister">
+      <div class="mb-3">
+        <label for="inputName" class="form-label">Name</label>
+        <input type="email" class="form-control" id="inputName" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="inputSurname" class="form-label">Surname</label>
+        <input type="email" class="form-control" id="inputSurname" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="inputEmail" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="inputUsername" class="form-label">Username</label>
+        <input type="email" class="form-control" id="inputUsername" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="inputPassword" class="form-label">Password</label>
+        <input type="password" class="form-control" id="inputPassword">
+      </div>
+      <button type="submit" class="btn btn-danger">Sign up my account!</button>
+    </form>
+    <a routerLink="/login" routerLinkActive="router-link-active" >Or Log in into an existing account</a>
+  </div>
+</div>
+
+<div class="footer fixed-bottom">
+  <p>All rights reserved</p>
+  <p>Contact me via e-mail: sergioferrerept@gmail.com</p>
+</div>
+
+
+
 

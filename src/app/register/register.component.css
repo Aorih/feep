@@ -1,31 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
 
-.banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    height: 10rem;
-    background-color: red;
-    font-family: 'Rubik Bubbles', cursive;
-    color: whitesmoke;
+/* Animations */
+.fadeIn{
+    animation: fadeIn 5s;
 }
 
-@media(max-width:768px){
-    .banner{
-        flex-direction: column;
-    }
+@keyframes gradientColor{
+    0% { background-position: 0% 0%; } 
+    100%{ background-position: 100% 0%; }
 }
 
-.keyWord{
-    margin: 0 2rem;
-    margin-top: -1.5rem;
-    font-weight: normal;
-    font-size: 4rem;
-    animation-name: shake;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
+@keyframes fadeIn {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@keyframes fadeInLat {
+    0%{opacity: 0; transform: translateX(300px);}
+    100%{opacity: 1; transform: translateX(0px);}
+}
+
+@keyframes fadeOut {
+    0%{opacity: 1;}
+    100%{opacity: 0;}
+}
+
+@keyframes toLateral {
+     0% { left: 0%; transform: scaleY(100%); }
+     90% { height: auto; }
+    100% { left: -65%; transform: scaleY(500%); height: 100%;}
+}
+
+@keyframes slideUp {
+    0%{ transform: translateY(-100%); }
+    100% { transform: translateY(0); }
 }
 
 @keyframes shake{
@@ -37,6 +45,92 @@
     100% { transform: rotate(0deg); }
 }
 
-.container-sm{
-    max-width: 60%;
+/* Elements */
+
+.heading{
+    position: fixed;
+    z-index: 0;
+    width: 100%;
+    padding: 2rem;
+    box-shadow: 0px 10px 9px 4px rgba(0,0,0,0.75);
+    color: whitesmoke;
+    font-family: 'Rubik Bubbles', cursive;
+    animation: gradientColor 10s linear infinite, toLateral 1s;
+    animation-fill-mode: forwards;
+    background-image: linear-gradient(90deg,  #9D1D1D 0%, rgb(214, 82, 82) 50%,  #9D1D1D 100%);
+    background-size: 1100% 100%;
+    left: -65%;
+}
+
+.heading__content{
+    display: flex;
+    opacity: 0;
+    animation: fadeOut 0.2s;
+}
+
+.background {
+    position: fixed;
+    background-color: rgba(26, 9, 5, 0.84);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+img {
+    max-width: 40rem;
+    max-height: 10rem;
+}
+
+.title{
+    display: flex;
+    flex-basis: 80%;
+    padding-left: 5rem;
+    padding-top: 2rem;
+}
+
+.footer{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 14%;
+    animation: gradientColor 10s linear infinite;
+    background-image: linear-gradient(90deg,  #9D1D1D 0%, rgb(214, 82, 82) 50%,  #9D1D1D 100%);
+    background-size: 1100% 100%;
+    box-shadow: 0px -9px 9px 4px rgba(0,0,0,0.75);
+}
+
+.rForm{
+    position: fixed;
+    width: 50%;
+    right: 7%;
+    top: 10%;
+    animation: slideUp 1s;
+    color: white;
+}
+
+.subtitle{
+    position: fixed;
+    z-index: 1;
+    top: 10%;
+    left: 5%;
+    margin-right: 70% ;
+    color: white;
+    font-family: 'Rubik Bubbles', cursive;
+    width: auto;
+    animation: fadeInLat 1s;
+}
+
+.subtitle h2{
+    text-align: center;
+    font-size: 5rem;
+    animation:  shake 2s linear infinite;
+}
+
+.footer{
+    display: flex;
+    color: rgba(255, 255, 255, 0.715);
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-top: 0.3rem;
 }

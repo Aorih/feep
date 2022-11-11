@@ -1,24 +1,56 @@
-<div *ngIf="_isLoading" @openClose>
-    <app-loader-mask></app-loader-mask>
+<app-loader-mask *ngIf="_isLoading" @openClose></app-loader-mask>
+<div *ngIf="!_isLoading">
+    <header class="heading fixed-top" [ngClass]="firstVisit ? 'showDown': 'toHead'">
+        <div class="heading__content" [ngClass]="firstVisit ? null : 'fadeInHContent'">
+            <div class="title">
+                <img src="../../assets/titleLogin.png" alt="sheep">
+            </div>
+            <form (ngSubmit)="validar()" [formGroup]="fLogin">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Username</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <button type="submit" class="btn btn-danger">Login</button>
+                <br>
+                <a routerLink="/register" routerLinkActive="router-link-active" >Or create a new account</a>
+            </form>
+        </div>
+    </header>
+    <div class="background" [ngClass]="firstVisit ? 'fadeInBG': null">
+        <div class="rForm" *ngIf="!firstVisit">
+            <form>
+              <div class="mb-3">
+                <label for="inputName" class="form-label">Name</label>
+                <input type="email" class="form-control" id="inputName" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="inputSurname" class="form-label">Surname</label>
+                <input type="email" class="form-control" id="inputSurname" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="inputEmail" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="inputUsername" class="form-label">Username</label>
+                <input type="email" class="form-control" id="inputUsername" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="inputPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inputPassword">
+              </div>
+              <button type="submit" class="btn btn-danger">Sign up my account!</button>
+            </form>
+            <a routerLink="/login" routerLinkActive="router-link-active" >Or Log in into an existing account</a>
+          </div>
+    </div>
+    <div class="footer fixed-bottom" [ngClass]="firstVisit ? 'showUp': 'gradientColor'">
+      <p>All rights reserved</p>
+      <p>Contact me via e-mail: sergioferrerept@gmail.com</p>
+    </div>
 </div>
 
-<main class="container-sm mt-5" *ngIf="!_isLoading" @openClose>
-    <div class="logo">
-        <div class="logo__img">
-            <p>Fee<strong>P</strong></p>
-        </div>
-    </div>
-    <form (ngSubmit)="validar()" [formGroup]="fLogin" class="mt-4 mb-2">
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Username</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-    </form>
-    <a routerLink="/register" routerLinkActive="router-link-active" >Or create a new account</a>
-</main>

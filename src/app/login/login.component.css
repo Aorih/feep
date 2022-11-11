@@ -1,19 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
 
-.logo{
-    display: flex;
-    justify-content: center;
+/* Animations */
+.showDown {
+    animation: showsDown 3s, gradientColor 10s linear infinite;
 }
 
-.logo__img{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.showUp{
+    animation: showsUp 3s, gradientColor 10s linear infinite;
+}
+
+.gradientColor {
+    animation: gradientColor 10s linear infinite;
+}
+
+.fadeInBG{
+    animation: fadeInBG 5s;
+}
+
+.fadeInHContent {
+    animation: fadeInHContent 1s;
+}
+
+.toHead{
+    animation: toHead 1s, gradientColor 10s linear infinite;
+}
+
+@keyframes gradientColor{
+    0% { background-position: 0% 0%; } 
+    100%{ background-position: 100% 0%; }
+}
+
+@keyframes showsDown {
+    0%, 50% { top: -160%; opacity: 0; box-shadow: none}
+    60% { opacity: 0; box-shadow: none; }
+    100%{ top: 0%; opacity: 1; box-shadow: 0px 10px 9px 4px rgba(0,0,0,0.75);}
+}
+
+@keyframes showsUp {
+    0%, 50% { bottom: -100%; opacity: 0; box-shadow: none}
+    60% { opacity: 0; box-shadow: none;}
+    100%{ bottom: 0%; opacity: 1; box-shadow: 0px -10px 9px 4px rgba(0,0,0,0.75);}
+}
+
+@keyframes fadeInBG{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@keyframes fadeInHContent{
+    0%, 70% {opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@keyframes toHead {
+    0% { left: -65%; transform: scaleY(500%); }
+   100% { left: 0%; transform: scaleY(100%);}
+}
+
+@keyframes hideUp{
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+/* Elements */
+
+.heading{
+    width: 100%;
+    padding: 2rem;
+    box-shadow: 0px 10px 9px 4px rgba(0,0,0,0.75);
     color: whitesmoke;
-    font-size: 8rem;
     font-family: 'Rubik Bubbles', cursive;
-    background-color: rgb(255, 42, 42);
-    width: 30rem;
-    height: 10rem;
-    border-radius: 2rem;
+    background-image: linear-gradient(90deg,  #9D1D1D 0%, rgb(214, 82, 82) 50%,  #9D1D1D 100%);
+    background-size: 1100% 100%;
+}
+
+.heading__content{
+    display: flex;
+}
+
+.background {
+    position: fixed;
+    background-color: rgba(26, 9, 5, 0.84);
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    max-width: 40rem;
+    max-height: 10rem;
+}
+
+.title{
+    display: flex;
+    flex-basis: 80%;
+    padding-left: 5rem;
+    padding-top: 2rem;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    color: rgba(255, 255, 255, 0.715);
+    width: 100%;
+    height: 14%;
+    background-image: linear-gradient(90deg,  #9D1D1D 0%, rgb(214, 82, 82) 50%,  #9D1D1D 100%);
+    background-size: 1100% 100%;
+    box-shadow: 0px -9px 9px 4px rgba(0,0,0,0.75);
+}
+
+.rForm{
+    position: fixed;
+    width: 50%;
+    right: 7%;
+    top: 10%;
+    animation: hideUp 1s;
+    animation-fill-mode: forwards;
 }
