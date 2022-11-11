@@ -16,7 +16,7 @@
 }
 
 @keyframes fadeInLat {
-    0%{opacity: 0; transform: translateX(200px);}
+    0%{opacity: 0; transform: translateX(300px);}
     100%{opacity: 1; transform: translateX(0px);}
 }
 
@@ -34,6 +34,15 @@
 @keyframes slideUp {
     0%{ transform: translateY(-100%); }
     100% { transform: translateY(0); }
+}
+
+@keyframes shake{
+    
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
 }
 
 /* Elements */
@@ -115,6 +124,7 @@ img {
 .subtitle h2{
     text-align: center;
     font-size: 5rem;
+    animation:  shake 2s linear infinite;
 }
 
 .footer{
