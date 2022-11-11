@@ -1,0 +1,48 @@
+.pCard{
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: repeat(2, 1fr);
+    position: fixed;
+    top: 10%;
+    left: 5%;
+    height: 20rem;
+    width: 20rem;
+    background-color: aqua;
+    border-style: solid;
+}
+
+.profile{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1;
+}
+
+.info{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+}
+
+.info .userName{
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+.info .counters{
+    display: flex;
+    flex-direction: column;
+}
+
+.description textarea{
+    width: 100%;
+    resize: none;
+    margin-bottom: -6px;
+}
+
+.profile .pic {
+    height: 6rem;
+    width: 6rem;
+    margin: 1rem;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
