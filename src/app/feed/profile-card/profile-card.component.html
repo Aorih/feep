@@ -23,7 +23,7 @@
                 
             </div>
         </div>
-        <pre class="my-0 mx-4" *ngIf="onEdit">{{currentLength}}/200</pre>
+        <pre class="my-0 mx-4" *ngIf="onEdit" ngClass="{{isOverflow}} ? invalid : null">{{currentLength}}/200</pre>
     </div>
     <div class="description">
         <div class="description__text">
