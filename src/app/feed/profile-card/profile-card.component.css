@@ -38,9 +38,27 @@ p{
 }
 
 .description textarea{
+    border: none;
+    outline: none;
     width: 100%;
     resize: none;
     margin-bottom: -6px;
+    background-color: white;
+}
+
+.description p{
+    padding: 0.5rem;
+    box-sizing: border-box;
+    width: auto;
+}
+
+.description__text{
+    width: 19.6rem;
+    word-wrap: break-word;
+}
+
+.description{
+    background-color: aliceblue;
 }
 
 .profile .pic {

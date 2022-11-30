@@ -25,6 +25,10 @@
         </div>
     </div>
     <div class="description">
-        <textarea name="" id="" rows="7" placeholder="About me..."></textarea>
+        <div class="description__text">
+            <p *ngIf="!onEdit" (click)="editDescription()">{{descriptionText}}</p>
+        </div>
+        <textarea #textArea *ngIf="onEdit" name="" id="textArea" rows="7" placeholder="About me..." value="{{descriptionText}}" (blur)="setDescription()"></textarea>
     </div>
 </div>
+

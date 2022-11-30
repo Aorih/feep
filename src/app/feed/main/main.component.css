@@ -1,6 +1,13 @@
-main {
-    margin-top: 10rem;
+h4{
+}
+
+.container{
+    margin: 0 auto;
+    margin-top: 7rem;
+    max-width: 40%;
+}
+
+.mainFeed {
     height: 100vh;
-    max-width: 50%;
     background-color: aliceblue;
 }
