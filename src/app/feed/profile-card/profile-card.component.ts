@@ -7,16 +7,24 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class ProfileCardComponent implements OnInit {
 
+  @ViewChild('textArea') textArea!: ElementRef;
   onEdit: boolean = false;
   descriptionText: string | null = "About me...";
+  invalidText: string = "";
+  isOverflow: boolean = false;
+  currentLength: number = this.descriptionText!.length;
   placeholder: string | null = "About me..."
-  @ViewChild('textArea') textArea!: ElementRef;
+
   constructor() { }
 
   ngOnInit(): void {
   }
   
-  
+  checkLength(){
+    this.currentLength = this.textArea.nativeElement.value.length;
+    this.isOverflow = this.currentLength > 200 ? true : false;  
+  }
+
   editDescription(){
     this.onEdit = true;
     setTimeout(() => {
@@ -27,7 +35,6 @@ export class ProfileCardComponent implements OnInit {
   setDescription(){
     const txtArea = this.textArea.nativeElement;
     const text = txtArea.value !== "" ? txtArea.value : "About me..."
-
     this.descriptionText = text;
     this.placeholder = text;
     this.onEdit = false;
