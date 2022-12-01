@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-profile-card',
@@ -8,6 +9,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 export class ProfileCardComponent implements OnInit {
 
   @ViewChild('textArea') textArea!: ElementRef;
+  static MAX_CHAR: number = 160;
+
   onEdit: boolean = false;
   descriptionText: string | null = "About me...";
   invalidText: string = "";
@@ -17,12 +20,16 @@ export class ProfileCardComponent implements OnInit {
 
   constructor() { }
 
+  get MAX_CHAR(){
+    return ProfileCardComponent.MAX_CHAR;
+  }
+
   ngOnInit(): void {
   }
   
   checkLength(){
     this.currentLength = this.textArea.nativeElement.value.length;
-    this.isOverflow = this.currentLength > 200 ? true : false;  
+    this.isOverflow = this.currentLength > this.MAX_CHAR ? true : false;  
   }
 
   editDescription(){
@@ -33,6 +40,14 @@ export class ProfileCardComponent implements OnInit {
   }
 
   setDescription(){
+    if(this.isOverflow){
+      Swal.fire({
+        icon: 'error',
+        title: "We know you're so interesting but...",
+        text: `You must rewrite your description under to ${this.MAX_CHAR} characters to save it`
+      })
+      return;
+    }
     const txtArea = this.textArea.nativeElement;
     const text = txtArea.value !== "" ? txtArea.value : "About me..."
     this.descriptionText = text;

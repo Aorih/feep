@@ -3,8 +3,10 @@
 
 <div class="pCard">
     <div class="profile">
-        <!-- <span class="pic"></span> -->
-        <img class="pic"  src="../../../assets/avatar.webp" alt="">
+        <div class="avatarIcon">
+            <img class="pic"  src="../../../assets/avatar.webp" alt="">
+            <pre class="my-0" *ngIf="onEdit"> <span [ngClass]="isOverflow ? 'invalid' : null">{{currentLength}}</span>/{{MAX_CHAR}}</pre>
+        </div>
         <div class="info">
             <h3 class="userName">Aorih</h3>
             <div class="counters">
@@ -20,10 +22,8 @@
                     </span>
                     <p>236</p>
                 </div>
-                
             </div>
         </div>
-        <pre class="my-0 mx-4" *ngIf="onEdit"> <span [ngClass]="isOverflow ? 'invalid' : null">{{currentLength}}</span>/200</pre>
     </div>
     <div class="description">
         <div class="description__text">

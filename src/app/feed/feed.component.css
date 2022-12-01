@@ -7,6 +7,7 @@ textarea{
     width: 100%;
     height: 20rem;
     background-color: tomato;
+    background-size: contain;
     z-index: -1;
 }
 
@@ -19,4 +20,8 @@ input[type="file"]{
     cursor: pointer;
     right: 1%;
     top: 4%;
+}
+
+.changeBannerButton:hover{
+    transform: scale(1.1)
 }

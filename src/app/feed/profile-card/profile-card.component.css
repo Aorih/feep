@@ -12,19 +12,25 @@ p{
     left: 5%;
     height: 20rem;
     width: 20rem;
-    background-color: aqua;
+    background-color: rgba(210, 94, 68, 1);
     border-style: solid;
 }
 
 .profile{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    height: 5rem;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: 1;
+}
+
+.avatarIcon{
+    display: flex;
+    flex-direction: column;
 }
 
 .info{
     display: grid;
-    grid-template-rows: repeat(2,1fr);
+    grid-template-rows: 1fr 2fr;
 }
 
 .info .userName{
