@@ -1,3 +1,8 @@
-<div class="banner fixed-top"></div>
+<div class="banner fixed-top" #banner>
+    <button class="btn btn-success btn-file">
+        Editar
+        <input type="file" (change)="changeBanner($event)">
+    </button>
+</div>
 <app-profile-card></app-profile-card>
 <app-main></app-main>

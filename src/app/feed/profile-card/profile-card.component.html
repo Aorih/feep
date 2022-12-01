@@ -23,7 +23,7 @@
                 
             </div>
         </div>
-        <pre class="my-0 mx-4" *ngIf="onEdit" ngClass="{{isOverflow}} ? invalid : null">{{currentLength}}/200</pre>
+        <pre class="my-0 mx-4" *ngIf="onEdit"> <span [ngClass]="isOverflow ? 'invalid' : null">{{currentLength}}</span>/200</pre>
     </div>
     <div class="description">
         <div class="description__text">
@@ -32,7 +32,8 @@
         <textarea #textArea *ngIf="onEdit" name="" id="textArea" rows="7" placeholder="About me..."
             value="{{descriptionText}}" 
             (blur)="setDescription()" 
-            (input)="checkLength()">
+            (input)="checkLength()"
+            [ngClass]="isOverflow ? 'invalid' : null">
         </textarea>
     </div>
 </div>
