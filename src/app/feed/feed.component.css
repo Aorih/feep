@@ -9,3 +9,14 @@ textarea{
     background-color: tomato;
     z-index: -1;
 }
+
+input[type="file"]{
+    display: none;
+}
+
+.changeBannerButton{
+    position: absolute;
+    cursor: pointer;
+    right: 1%;
+    top: 4%;
+}

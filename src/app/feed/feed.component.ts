@@ -16,15 +16,12 @@ export class FeedComponent implements OnInit {
 
   changeBanner(event:any){
 
-    console.log("entro al metodo")
     if(!event.target.files[0] || event.target.files[0].length == 0){
-      console.log("entro al primer if")
       return;
     }
 
     let mimeType = event.target.files[0].type;
     if(mimeType.match(/image\/*/) == null){
-      console.log("entro al segundo if")
       return;
     }
 
@@ -32,8 +29,7 @@ export class FeedComponent implements OnInit {
     reader.readAsDataURL(event.target.files[0]);
     reader.onload = (_event) => {
       this.url = reader.result;
-      console.log(this.url);
-      this.banner.nativeElement.style.backgroundImage='url(' + this.url + ')';
+      this.banner.nativeElement.style.backgroundImage=`url(${this.url})`;
     }
     
   }
